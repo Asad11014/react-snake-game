@@ -1,0 +1,143 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/dark_wall.png');
+}
+
+.App {
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  font-size: 3em;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  margin-bottom: 20px;
+}
+
+.board {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: #111;
+  display: grid;
+  grid-template-columns: repeat(25, 20px);
+  grid-template-rows: repeat(25, 20px);
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.board.fade-out {
+  opacity: 0;
+}
+
+.snake {
+  background-color: #6ab04c;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px #004d00, 0 0 10px #00ff00;
+  background-image: radial-gradient(circle, #6ab04c 20%, #4caf50 80%);
+}
+
+.food {
+  background-color: #ff0000;
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px #660000, 0 0 10px #ff0000;
+}
+
+.start-button, .restart-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background: #000;
+  border: 2px solid;
+  border-radius: 10px;
+  box-shadow: 0 0 20px, 0 0 30px, 0 0 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.start-button {
+  border-color: #00ff00;
+  box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+}
+
+.restart-button {
+  border-color: #ff0000;
+  box-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+}
+
+.start-button:before, .restart-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 0, 0.2);
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.start-button:hover:before, .restart-button:hover:before {
+  opacity: 1;
+}
+
+.start-button:active, .restart-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 255, 0, 0.4);
+}
+
+.restart-button:before {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.restart-button:active {
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.4);
+}
+
+h2 {
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.game-over-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.game-over-container.visible {
+  opacity: 1;
+}
