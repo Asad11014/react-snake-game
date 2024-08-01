@@ -2,6 +2,7 @@
 
 One of my first projects built with React - a classic snake game. This project showcases a fully functional Snake game with a simple neon arcade styling theme.
 
+Now deployed with Vercel! Link: https://react-snake-game-chi.vercel.app/
 ## Features
 
 - Standard snake game operations
